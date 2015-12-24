@@ -26,29 +26,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- AdminLTE Skins. Choose a skin from the css/skins
      folder instead of downloading all of them to reduce the load. -->
 <link href="app/style/bootstrap/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+<link href="app/style/mine/home.css" rel="stylesheet" type="text/css" />
 
   </head>
   
  <body class="skin-blue  sidebar-mini">
-    <div class="wrapper">
+    <div class="wrapper" style="margin-left:0px;">
 
-      <header class="main-header">
+      <header class="main-header" style="margin-left:0px;">
         <!-- Logo -->
-        <a href="../../index2.html" class="logo">
+        
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-left:0px;">
+          <!-- Sidebar toggle button-->
+         <a href="../../index2.html" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>A</b>LT</span>
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg"><b>超市管理系统</b></span>
         </a>
-        <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top" role="navigation">
-          <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
               <!-- Messages: style can be found in dropdown.less-->
@@ -246,237 +242,59 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </header>
       <!-- Left side column. contains the logo and sidebar -->
      
-      <aside class="main-sidebar" id="showLeftMember"  > 
-        <section class="sidebar" id="side-gaoliang">
-          <ul class="sidebar-menu" ng-controller="showOptionController">
-             <li class="treeview mymenu1"style="background:#d9edf7">
-               <a href="#/combination" style="color:#3c8dbc;font-size:14px;font-weight: 600;">
-                <i class="glyphicon glyphicon-exclamation-sign"></i> <span>销售管理</span>
-              </a>
-            </li>
-            <li><a href="#/stopMachineNote"><i class="glyphicon glyphicon-list-alt text-aqua"></i> <span>停机报告</span></a></li>
-            <li><a href="#/error"><i class="glyphicon glyphicon-warning-sign text-yellow"></i> <span>报警记录</span></a></li>
-            <li><a href="#/repairNote"><i class="fa fa-wrench text-aqua"></i> <span>维修记录</span></a></li>
-           <li class="treeview mymenu1"style="background:#d9edf7">
-               <a href="#/listPerson" style="color:#3c8dbc;font-size:14px;font-weight: 600;">
-                <i class="fa fa-users"></i> <span >货物管理</span>
-              </a>
-            </li>
-          <li><a href="#/listPerson"><i class="glyphicon glyphicon-list-alt text-aqua"></i> <span>成员列表</span></a></li>
-          <li><a href="#/addPerson/"><i class="fa fa-plus-square text-yellow"></i> <span>成员添加</span></a></li>
-           <li><a href="#/personArrange"><i class="fa fa-tags text-aqua"></i> <span>成员排班</span></a></li>
-
-            <li class="treeview mymenu1"style="background:#d9edf7">
-               <a href="#/listPerson" style="color:#3c8dbc;font-size:14px;font-weight: 600;">
-                <i class="fa fa-users"></i> <span >账单管理</span>
-              </a>
-            </li>
-          <li><a href="#/listPerson"><i class="glyphicon glyphicon-list-alt text-aqua"></i> <span>成员列表</span></a></li>
-          <li><a href="#/addPerson/"><i class="fa fa-plus-square text-yellow"></i> <span>成员添加</span></a></li>
-           <li><a href="#/personArrange"><i class="fa fa-tags text-aqua"></i> <span>成员排班</span></a></li>
-
-           <li class="treeview mymenu1"style="background:#d9edf7">
-               <a href="#/listPerson" style="color:#3c8dbc;font-size:14px;font-weight: 600;">
-                <i class="fa fa-users"></i> <span >用户管理</span>
-              </a>
-            </li>
-          <li><a href="#/listPerson"><i class="glyphicon glyphicon-list-alt text-aqua"></i> <span>成员列表</span></a></li>
-
-
-
-
-
-
-        </ul>
-        </section>
-        <!-- /.sidebar -->
-  <script> 
-function  gaoliang(){ 
-      //获取鼠标滑过或是点击的标签和要切换内容的元素
-      var lis=document.getElementById("side-gaoliang").getElementsByTagName('li');
-          //遍历titles下的所有li
-          for (var i = 0; i < lis.length; i++) {
-            lis[i].id=i;
-            lis[i].onclick=function(){
-              
-              //清除所有li上的class
-              for (var j = 0; j < lis.length; j++) {
-                lis[j].className='';
-              };
-              //只有当前高亮
-              this.className='select';  
-            }
-          }
-    }
-     gaoliang();
-</script>
-      </aside>
+    
 
       <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
+      <div class="content-wrapper" style="margin-left:0px;">
         <!-- 中间内容的显示-->
         <section class="content-header">
 
         
-
-    <div class="box">
-        <div class="box-header">
-            <h3 class="box-title">万丰设备维修记录</h3>
-            <div class="box-tools">
-                <div class="input-group" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
-                    <div class="input-group-btn">
-                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
-                    </div>
+             <div class="row center-block" style="margin-top:10%;">
+             
+                <div class="col-xs-3 col-sm-3" style=" text-align:center;">
+                <a href="#" title="在线收银">
+                <img src="app/img/goods.png" class="img-responsive center-block imageTextDistance" alt="Responsive image">
+                <span id="money">在线收银</span>
+                </a>
                 </div>
-            </div>
-        </div><!-- /.box-header -->
-        <div class="box-body table-responsive no-padding">
-             <table class="table table-hover table-striped">
-                <tbody><tr>
-                    <th>设备编号</th>
-                    <th>设备名称</th>
-                    <th>设备维修时间</th>
-                    <th>设备维修级别</th>
-                    <th>设备维修负责人</th>
-                    <th>设备报警详情</th>
-                </tr>
-                <tr>
-                    <td>183</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-success">1</span></td>
-                    <td>张工</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-                <tr>
-                    <td>219</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-warning">3</span></td>
-                    <td>李工</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-                <tr>
-                    <td>657</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-danger">4</span></td>
-                    <td>张工</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-                <tr>
-                    <td>657</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-primary">2</span></td>
-                    <td>周工</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-                <tr>
-                    <td>657</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-primary">2</span></td>
-                    <td>徐工</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-                <tr>
-                    <td>657</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-primary">2</span></td>
-                    <td>夏工</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-               <tr>
-                    <td>657</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-primary">2</span></td>
-                    <td>陶工</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-                <tr>
-                    <td>657</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-primary">2</span></td>
-                    <td>张工</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-                <tr>
-                    <td>657</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-primary">2</span></td>
-                    <td>姚工</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-                <tr>
-                    <td>657</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-primary">2</span></td>
-                    <td>丁工</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-                <tr>
-                    <td>657</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-primary">2</span></td>
-                    <td>王工</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-                <tr>
-                    <td>657</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-primary">2</span></td>
-                    <td>龚工</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-                <tr>
-                    <td>657</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-primary">2</span></td>
-                    <td>贺工</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-                <tr>
-                    <td>657</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-primary">2</span></td>
-                    <td>陈工</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-                <tr>
-                    <td>657</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-primary">2</span></td>
-                    <td>张工</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-                </tbody></table>
-        </div><!-- /.box-body -->
-    </div>
+             
 
+  <div class="col-xs-3 col-sm-3" style=" text-align:center;">
+  
+  
+  <a href="#" title="人员管理"><img src="app/img/people.png" class="img-responsive center-block imageTextDistance" style="margin-bottom:10px;" alt="Responsive image">
+
+  <span>人员管理</span>
+
+  </a>
+  
+  
+  </div>
+
+  <!-- Add the extra clearfix for only the required viewport -->
+  <div class="clearfix visible-xs-block"></div>
+
+  <div class="col-xs-3 col-sm-3" style=" text-align:center;">
+  <a href="#" title="仓库管理">
+  <img src="app/img/money.png" class="img-responsive center-block imageTextDistance" alt="Responsive image">
+  <span style="margin:20px;">仓库管理</span>
+  </a>
+  </div>
+  <div class="col-xs-3 col-sm-3" style=" text-align:center;">
+  <a href="#" title="账单管理">
+  <img src="app/img/git.png" class="img-responsive center-block imageTextDistance" alt="Responsive image">
+  <span>账单管理</span>
+  </a>
+  </div>
 </div>
-
+    
 
           
         </section>
-
-        <!-- Main content -->
-        <section class="content">
-          </section>
       </div><!-- /.content-wrapper -->
 
-      <footer class="main-footer">
+      <footer class="main-footer" style="margin-left:0px;">
         <div class="pull-right hidden-xs">
           <b>Version</b> 2.2.0
         </div>
@@ -587,64 +405,6 @@ function  gaoliang(){
           <!-- Stats tab content -->
           <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
           <!-- Settings tab content -->
-          <div class="tab-pane" id="control-sidebar-settings-tab">
-            <form method="post">
-              <h3 class="control-sidebar-heading">General Settings</h3>
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Report panel usage
-                  <input type="checkbox" class="pull-right" checked />
-                </label>
-                <p>
-                  Some information about this general settings option
-                </p>
-              </div><!-- /.form-group -->
-
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Allow mail redirect
-                  <input type="checkbox" class="pull-right" checked />
-                </label>
-                <p>
-                  Other sets of options are available
-                </p>
-              </div><!-- /.form-group -->
-
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Expose author name in posts
-                  <input type="checkbox" class="pull-right" checked />
-                </label>
-                <p>
-                  Allow the user to show his name in blog posts
-                </p>
-              </div><!-- /.form-group -->
-
-              <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Show me as online
-                  <input type="checkbox" class="pull-right" checked />
-                </label>
-              </div><!-- /.form-group -->
-
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Turn off notifications
-                  <input type="checkbox" class="pull-right" />
-                </label>
-              </div><!-- /.form-group -->
-
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Delete chat history
-                  <a href="javascript::;" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-                </label>
-              </div><!-- /.form-group -->
-            </form>
-          </div><!-- /.tab-pane -->
-        </div>
       </aside><!-- /.control-sidebar -->
       <!-- Add the sidebar's background. This div must be placed
            immediately after the control sidebar -->
@@ -652,7 +412,6 @@ function  gaoliang(){
     </div><!-- ./wrapper -->
 
   </body>
-  
-   <s:include value="common/sourceFooter.jsp"></s:include>
-  
+  <!--下面是requirejs框架-->
+   <script data-main="app/js/mine/main.js" src="app/js/requirejs/require.js"></script>
 </html>

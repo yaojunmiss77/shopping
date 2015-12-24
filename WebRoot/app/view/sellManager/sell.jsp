@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<html>
+
 
     <div class="box">
         <div class="box-header">
@@ -148,4 +147,4 @@
     </div>
 
 </div>
-</html>
+
