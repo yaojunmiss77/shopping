@@ -29,6 +29,70 @@ public class User implements java.io.Serializable{
 	private Integer age;
 	private String imagePath;
 	private Integer sellId;
+	public User() {
+		super();
+	}
+	public User(String name, String number, String telNumber, String sex,
+			Integer age, String imagePath, Integer sellId) {
+		super();
+		this.name = name;
+		this.number = number;
+		this.telNumber = telNumber;
+		this.sex = sex;
+		this.age = age;
+		this.imagePath = imagePath;
+		this.sellId = sellId;
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getNumber() {
+		return number;
+	}
+	public void setNumber(String number) {
+		this.number = number;
+	}
+	public String getTelNumber() {
+		return telNumber;
+	}
+	public void setTelNumber(String telNumber) {
+		this.telNumber = telNumber;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+	public Integer getAge() {
+		return age;
+	}
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+	public String getImagePath() {
+		return imagePath;
+	}
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+	public Integer getSellId() {
+		return sellId;
+	}
+	public void setSellId(Integer sellId) {
+		this.sellId = sellId;
+	}
+	
+	
 	
 	
 }

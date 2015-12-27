@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+	<property name="hibernate.bytecode.use_reflection_optimizer">
+		false
+	</property>
+	<property name="hibernate.connection.driver_class">
+		org.postgresql.Driver
+	</property>
+	<property name="hibernate.connection.password">taoxiaoqing</property>
+	<property name="hibernate.connection.url">
+		jdbc:postgresql://localhost:5432/shopping
+	</property>
+	<property name="hibernate.connection.username">postgres</property>
+	<property name="hibernate.dialect">
+		org.hibernate.spatial.dialect.postgis.PostgisDialect
+	</property>
+	<property name="hibernate.format_sql">true</property>
+	<property name="hibernate.search.autoregister_listeners">
+		false
+	</property>
+
+	<property name="hibernate.show_sql">true</property>
+	<property name="hibernate.connection.pool_size">20</property>
+	<property name="hibernate.proxool.pool_alias">pool1</property>
+	<property name="hibernate.max_fetch_depth">1</property>
+	<property name="hibernate.jdbc.batch_versioned_data">true</property>
+	<property name="hibernate.jdbc.use_streams_for_binary">
+		true
+	</property>
+	<property name="hibernate.cache.region_prefix">
+		hibernate.test
+	</property>
+	<property name="hibernate.cache.provider_class">
+		org.hibernate.cache.HashtableCacheProvider
+	</property>
+	<property name="hbm2ddl.auto">update</property>
+	
+
+	<mapping resource="pojo/User.hbm.xml" />
+	
+</session-factory>
+</hibernate-configuration>

@@ -86,7 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <img src="app/img/accounts.png"/> <span>账单管理</span></a></li>
 
            <li style="padding-left:15px;" id="cangku"><a href="#/personArrange">
-           <img src="app/img/warehouse.png"/><span>仓库管理</span></a></li>
+           <img src="app/img/money.png"/><span>仓库管理</span></a></li>
 
            
         </ul>
