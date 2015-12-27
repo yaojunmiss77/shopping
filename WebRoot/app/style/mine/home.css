@@ -1,0 +1,61 @@
+/*图片和底部文本的相对距离*/
+.imageTextDistance{
+
+	margin-bottom: 10px;
+}
+
+.padding-href{
+	padding-left: 5%;
+	padding-right: 5%;
+	text-align: center;
+}
+
+.bigImage{
+
+	width: 40px;
+}
+
+@charset "utf-8";
+/* CSS Document */
+/*添加车间样式开始*/
+.add{
+	color:#fff;
+	float:left;
+	margin:16px 20px 0 20px;
+}
+.add0{
+	color:#fff;
+	float:right;
+	margin:16px 20px 0 20px;
+}
+.add  i{
+	margin-right:4px;
+}
+.add0  a{
+	color:#fff;
+}
+.add0  i{
+	margin-right:4px;
+}
+.add  a{
+	color:#fff;
+}
+/*添加车间样式结束*/
+
+aside section ul li a img{
+	width: 36px;
+}
+
+aside section ul li{
+	border-bottom: 1px solid #ddd;
+}
+
+/* 防止body出现滚动条 */
+body{
+	overflow: hidden;
+}
+
+/* 建立屏幕适当的大小 */
+.conternerSize{
+	height: 550px;
+}

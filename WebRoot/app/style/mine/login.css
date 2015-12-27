@@ -1,0 +1,20 @@
+body{
+	
+	background: url('../../img/background.jpg');
+	background-position:center; 
+	background-repeat:no-repeat; 
+	background-size:cover;
+}
+input{
+	width: auto;
+}
+/* 给登录标签运动白色的字体 */
+form div label{
+	color:white;
+	font-family: '宋体';
+}
+h1{
+	color: white;
+	font-weight: bold;
+	font-size: 48px;
+}

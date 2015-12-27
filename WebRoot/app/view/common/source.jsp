@@ -10,8 +10,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
  
-<link rel="stylesheet" href="app/style/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet" href="app/style/bootstrap/css/font-awesome.min.css" />
-<link rel="stylesheet" href="app/style/bootstrap/css/ionicons.min.css" />
-<link rel="stylesheet" href="app/style/bootstrap/css/AdminLTE.min.css" />
-<link rel="stylesheet" href="app/style/bootstrap/css/skins/_all-skins.min.css" />
+	<!-- Bootstrap 3.3.4 -->
+<link href="app/style/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<!-- Font Awesome Icons -->
+<link href="app/style/bootstrap/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<!-- Ionicons -->
+<link href="app/style/bootstrap/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+<!-- Theme style -->
+<link href="app/style/bootstrap/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+     folder instead of downloading all of them to reduce the load. -->
+<link href="app/style/bootstrap/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+<link href="app/style/mine/home.css" rel="stylesheet" type="text/css" />
