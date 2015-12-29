@@ -17,6 +17,9 @@
         <property name="number" type="java.lang.String">
             <column name="number" length="64" not-null="true" />
         </property>
+        <property name="password" type="java.lang.String">
+            <column name="password" length="64"/>
+        </property>
         <property name="telNumber" type="java.lang.String">
             <column name="telNumber" length="64" />
         </property>

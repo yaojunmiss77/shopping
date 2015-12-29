@@ -1,5 +1,4 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -37,14 +36,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  <div class="container-fluid">
  <div class="row" style="padding-left:35%;">
  <div class="col-md-12" style="padding-top: 5%;">
-   <h1>超市管理登录系统</h1>
+   <img src="app/img/dong.gif" style="width: 80px; margin-right:1%; vertical-align: bottom;" alt="..." class="img-circle"><h1 style=" display: inline;">超市管理登录系统</h1>
  </div>
  </div>
 
  <div class="row" style="padding-left: 40%;">
     <div class="col-md-5" style="padding-top: 12%;">
 
-        <form>
+        <form action="login.action" method="post">
 
         <div class="form-group form-inline">
             <label for="exampleInputEmail1">角色:</label>
@@ -59,14 +58,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <label for="exampleInputEmail1">工号:</label>
             <div class="input-group">
             <span class="input-group-addon" id="basic-addon1"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
-            <input type="text"  required="required" class="form-control" id="exampleInputEmail1" placeholder="工号" aria-describedby="basic-addon1">
+            <input type="text" name="number"  required="required" class="form-control" id="exampleInputEmail1" placeholder="工号" aria-describedby="basic-addon1">
             </div>
           </div>
           <div class="form-group form-inline">
             <label for="exampleInputPassword1">密码:</label>
             <div class="input-group">
               <span class="input-group-addon" id="basic-addon1"> <span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
-              <input type="password" required="required" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input type="password" name="password" required="required" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
           </div>
           <button type="submit" class="btn btn-default" style="margin-left: 12.5%;">登录</button>

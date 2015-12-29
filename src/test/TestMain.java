@@ -1,9 +1,13 @@
 package test;
 
+
 import hibernate.util.HibernateUtil;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
+import dao.IUserDao;
+import dao.UserDao;
 
 import pojo.User;
 
@@ -12,7 +16,7 @@ public class TestMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Session session=null;
+		/*Session session=null;
 		Transaction ts=null;
 		try {
 			session=HibernateUtil.getCurrentSession();
@@ -35,7 +39,11 @@ public class TestMain {
 			if(session!=null && session.isOpen()){
 				session.close();
 			}
-		}
+		}*/
+		
+		
+	 IUserDao too=new UserDao();
+	System.out.println(too.isValid("yaoun", "123"));
 		
 	}
 

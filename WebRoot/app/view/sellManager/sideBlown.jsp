@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@taglib uri="/struts-tags" prefix="s"%>
+
 <div>
 	<aside class="main-sidebar" id="showLeftMember"  > 
         <section class="sidebar" id="side-gaoliang">

@@ -1,4 +1,11 @@
 define(["jquery"],function(jquery){
+
+	/*该属性用于iframe切换页面用的*/
+	$('.frame-menu,a').click(function(){
+		var src = $(this).attr('href');	
+		$('iframe').attr('src',src);
+		return false;
+	}); 
 	
 	/*首先得到conterner需要多高的要求*/
 	var conternerHeight=document.body.clientHeight
@@ -19,7 +26,9 @@ define(["jquery"],function(jquery){
 		$(this).children('img').removeClass('bigImage');
 	})
 	
-               
+	
+
+      
 	
 });
 

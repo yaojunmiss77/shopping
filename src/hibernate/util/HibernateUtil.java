@@ -129,7 +129,12 @@ final public class HibernateUtil {
 		return list;
 	}
 	
-	//提供一个统一的查询方法 hql 形式 from 类  where 条件=? ..
+	/**
+	 * @category 提供一个统一的查询方法 hql 形式 from 类  where 条件=? ..
+	 * @param hql
+	 * @param parameters
+	 * @return
+	 */
 	public static List executeQuery(String hql,String [] parameters){
 		
 		Session s=null;

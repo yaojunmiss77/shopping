@@ -1,0 +1,27 @@
+body{
+	padding: 1px;
+}
+.col-md-2 img{
+	height: 72px;
+
+}
+.jumbotron{
+	padding: 1%;
+	background-color: #fff;
+	border-bottom:solid 2px #ddd;
+}
+.row{
+	padding:1%;
+}
+.col-md-2{
+	text-align: center;
+
+}
+h5{
+	color: red;
+}
+h1, h2, h3, h4, h5, h6 {
+
+	display: inline;
+	
+}

@@ -24,6 +24,7 @@ public class User implements java.io.Serializable{
 	private Integer id;
 	private String name;
 	private String number;
+	private String password;
 	private String telNumber;
 	private String sex;
 	private Integer age;
@@ -32,11 +33,12 @@ public class User implements java.io.Serializable{
 	public User() {
 		super();
 	}
-	public User(String name, String number, String telNumber, String sex,
-			Integer age, String imagePath, Integer sellId) {
+	public User(String name, String number, String password, String telNumber,
+			String sex, Integer age, String imagePath, Integer sellId) {
 		super();
 		this.name = name;
 		this.number = number;
+		this.password = password;
 		this.telNumber = telNumber;
 		this.sex = sex;
 		this.age = age;
@@ -60,6 +62,12 @@ public class User implements java.io.Serializable{
 	}
 	public void setNumber(String number) {
 		this.number = number;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public String getTelNumber() {
 		return telNumber;
@@ -91,9 +99,6 @@ public class User implements java.io.Serializable{
 	public void setSellId(Integer sellId) {
 		this.sellId = sellId;
 	}
-	
-	
-	
 	
 }
 

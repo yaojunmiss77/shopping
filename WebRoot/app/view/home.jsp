@@ -1,5 +1,4 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -27,6 +26,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      folder instead of downloading all of them to reduce the load. -->
 <link href="app/style/bootstrap/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
 <link href="app/style/mine/home.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="app/style/sui/sui.min.css" />
+<link rel="stylesheet" href="app/style/sui/sui-append.min.css" />
+<script src="app/js/sui/sui.min.js"></script>
 
   </head>
   <!-- ADD THE CLASS layout-boxed TO GET A BOXED LAYOUT -->
@@ -72,20 +74,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!--主体开始-->
     <!--左侧栏开始-->
 
-        <aside class="main-sidebar" id="showLeftMember"  > 
+        <aside class="main-sidebar sui-nav nav-list sui ui-sortable" id="showLeftMember"> 
         <section class="sidebar" id="side-gaoliang">
           <ul class="sidebar-menu">
 
-            <li style="padding-left:15px;"><a href="#/error">
+            <li style="padding-left:15px;"><a class="frame-menu" href="app/view/sellManager/cashier.jsp">
             <img src="app/img/sell.png"/> <span>收银管理</span></a></li>
 
-            <li style="padding-left:15px;"><a href="#/personArrange">
+            <li style="padding-left:15px;"><a class="frame-menu" href="app/view/sellManager/sell.jsp">
            <img src="app/img/people.png"/><span>人事管理</span></a></li>
 
-          <li style="padding-left:15px;"><a href="#/addPerson/">
+          <li style="padding-left:15px;"><a class="frame-menu" class="frame-menu" href="#/addPerson/">
           <img src="app/img/accounts.png"/> <span>账单管理</span></a></li>
 
-           <li style="padding-left:15px;" id="cangku"><a href="#/personArrange">
+           <li style="padding-left:15px;" id="cangku"><a class="frame-menu" href="#/personArrange">
            <img src="app/img/money.png"/><span>仓库管理</span></a></li>
 
            
@@ -121,7 +123,7 @@ function  gaoliang(){
          <div class="content-wrapper">
           <!-- 主体开始 -->
   
-        <iframe id="if" src="app/view/sellManager/sell.jsp" style="width:100%; height:100%; "></iframe>
+        <iframe id="if" src="app/view/sellManager/cashier.jsp" style="width:100%; height:100%; "></iframe>
 
     <!-- 主体结束 -->
          </div>
