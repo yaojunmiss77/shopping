@@ -1,4 +1,4 @@
-define(["jquery"],function(jquery){
+define(["jquery","cashier"],function(jquery,cashier){
 
 	/*该属性用于iframe切换页面用的*/
 	$('.frame-menu,a').click(function(){
@@ -25,10 +25,6 @@ define(["jquery"],function(jquery){
 	},function(){
 		$(this).children('img').removeClass('bigImage');
 	})
-	
-	
-
-      
 	
 });
 

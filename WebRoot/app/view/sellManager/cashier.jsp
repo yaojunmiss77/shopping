@@ -41,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div id="food">
       <img src="app/img/foods/coca.png" class="img-circle" title="可口可乐" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
       <div class="caption">
-      <h4>可口可乐</h4>
+      <h4>可口可乐</h4><h5>￥10/罐</h5>
         <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a></p>
       </div>
     </div>
@@ -50,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div id="food">
       <img src="app/img/foods/cans.png" alt="..."  style="vertical-align:top;"><span class="label label-success">4</span>
       <div class="caption">
-      <h4>可奶</h4>
+      <h4>可奶</h4><h5>￥10/罐</h5>
         <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a></p>
       </div>
 
@@ -60,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div>
       <img src="app/img/foods/cans1.png" class="img-circle" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
       <div class="caption">
-      <h4>百事可乐</h4>
+      <h4>百事可乐</h4><h5>￥10/罐</h5>
         <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a></p>
       </div>
     </div>
@@ -69,7 +69,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div>
       <img src="app/img/foods/coffee.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
       <div class="caption">
-      <h4>咖啡</h4>
+      <h4>咖啡</h4><h5>￥10/瓶</h5>
         <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a></p>
       </div>
     </div>
@@ -78,7 +78,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div>
       <img src="app/img/foods/melon_water.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
       <div class="caption">
-      <h4>西瓜</h4>
+      <h4>西瓜</h4><h5>￥10/个</h5>
         <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a></p>
       </div>
     </div>
@@ -87,20 +87,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div>
       <img src="app/img/foods/apple.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
       <div class="caption">
-      <h4>苹果</h4>
+      <h4>苹果</h4><h5>￥10/个</h5>
         <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a></p>
       </div>
     </div>
   </div>
   <div class="col-sm-6 col-md-2">
     <div>
-      <img src="app/img/foods/burger.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
+      <img src="app/img/foods/burger.png" alt="..." title="汉堡包" style="vertical-align:top;"><span class="label label-success">4</span>
       <div class="caption">
       <h4>汉堡包</h4><h5>￥10/个</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a></p>
+        <p><button class="btn btn-success" role="button">+</button> <button href="#" class="btn btn-danger" role="button">-</button></p>
       </div>
     </div>
   </div>
 
 </div>
+
+<!--下面是requirejs框架-->
+    <script data-main="app/js/mine/main.js" src="app/js/requirejs/require.js"></script>
+    
+    </script>
 </body>
