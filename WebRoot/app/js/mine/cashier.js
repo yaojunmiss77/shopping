@@ -82,15 +82,27 @@ define(["jquery"],function(){
 			}
 	})
 
-	/*支付金额发生改变调用该函数*/
-	$(':input:text').change(function(){
+
+	/*当支付金额文本框得到焦点的时候开始给docuemnt放入点击事件*/
+	$(':input:text').focus(function(){
+
+		$(document).keyup(function(){
 		var remainder = 0;
-		remainder = parseFloat($(this).val()) - parseFloat(/\d+/gi.exec($('#allMoney').text()));
+		remainder = parseFloat($(':input:text').val()) - parseFloat(/\d+/gi.exec($('#allMoney').text()));
 		if(remainder > 0)
-			$('#remainder').text(remainder);
+			$('#remainder').text("￥"+remainder);
 		else
 			$('#remainder').text("余额不足");
 	})
+
+	})
+
+/*当支付金额失去焦点的时候给document移除点击事件*/
+	$(':input:text').blur(function(){
+
+		$(document).unbind('keyup');
+	})
+	
 
 	
 
