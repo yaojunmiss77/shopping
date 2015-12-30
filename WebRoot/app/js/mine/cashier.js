@@ -2,11 +2,37 @@ define(["jquery"],function(){
 
 	function cashier(){
 
+		/*首先定义总价*/
+		var allMoney=0;
+
+		/*循环计算总价的函数*/
+
+		function countAllMoney()
+		{
+			allMoney=0;
+			$.each($('.food'),function(){
+
+			var num = $(this).children('span').text();
+			var price = parseFloat(/\d+/gi.exec($(this).children('div').children('h5').text()));
+			allMoney+=num*price;
+
+		})
+
+		$('#allMoney').text("￥"+allMoney);
+		}
+
+		countAllMoney();
+
+		
+
+		
+
 		/*点击加号进行加计算*/
 
 		$('.btn-success').click(function(){
 
 			var hFive = $(this).parent().prev();
+
 			var numSpan = hFive.parent().prev();
 			var numSpanText = (parseInt(numSpan.text()));
 			if(numSpanText == 0)
@@ -15,6 +41,11 @@ define(["jquery"],function(){
 				$(this).next().removeClass('disabled');
 			}
 			numSpan.text(++numSpanText);
+
+			/*var price=parseFloat((/\d+/gi).exec(hFive.text()));
+			allMoney=price*numSpanText;
+			$('#allMoney').text("￥"+allMoney);*/
+			countAllMoney();
 
 		})
 
@@ -31,6 +62,8 @@ define(["jquery"],function(){
 				numSpan.removeClass('label-success');
 				$(this).addClass('disabled')
 			}
+			
+			countAllMoney();
 
 		})
 
@@ -47,6 +80,16 @@ define(["jquery"],function(){
 			{
 				window.alert("我已经放弃了");
 			}
+	})
+
+	/*支付金额发生改变调用该函数*/
+	$(':input:text').change(function(){
+		var remainder = 0;
+		remainder = parseFloat($(this).val()) - parseFloat(/\d+/gi.exec($('#allMoney').text()));
+		if(remainder > 0)
+			$('#remainder').text(remainder);
+		else
+			$('#remainder').text("余额不足");
 	})
 
 	

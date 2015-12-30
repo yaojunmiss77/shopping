@@ -8,13 +8,18 @@ body{
 .jumbotron{
 	padding: 1%;
 	background-color: #fff;
-	border-bottom:solid 2px #ddd;
+	border-bottom:solid 1px #ddd;
+	margin-bottom: 10px;
 }
 .row{
 	padding:1%;
+	padding-top: 7px;
 }
 .col-md-2{
 	text-align: center;
+	padding-bottom: 0px;
+
+	border-right: 1px solid #ddd;
 
 }
 h5{
@@ -24,4 +29,12 @@ h1, h2, h3, h4, h5, h6 {
 
 	display: inline;
 	
+}
+
+.row{
+	border-bottom: 1px solid #ddd;
+}
+
+h2,h3,h3,h4,h5,h6{
+	font-family: "Times New Roman";
 }
