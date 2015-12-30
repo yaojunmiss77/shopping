@@ -1,15 +1,7 @@
 package test;
 
-
-import hibernate.util.HibernateUtil;
-
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-
 import dao.IUserDao;
 import dao.UserDao;
-
-import pojo.User;
 
 public class TestMain {
 	

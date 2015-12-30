@@ -4,15 +4,10 @@ import hibernate.util.HibernateUtil;
 
 import java.util.List;
 
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-
 import pojo.User;
 
 public class UserDao implements IUserDao
 {
-
-
 	public boolean isValid(String userName, String password) {
 		// TODO Auto-generated method stub
 		boolean b=false;
