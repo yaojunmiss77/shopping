@@ -21,11 +21,8 @@ define(["jquery"],function(){
 		$('#allMoney').text("￥"+allMoney);
 		}
 
+		/*计算总金额*/
 		countAllMoney();
-
-		
-
-		
 
 		/*点击加号进行加计算*/
 
@@ -40,11 +37,23 @@ define(["jquery"],function(){
 				numSpan.addClass('label-success');
 				$(this).next().removeClass('disabled');
 			}
+			/*改动右上角的商品点击个数*/
 			numSpan.text(++numSpanText);
 
-			/*var price=parseFloat((/\d+/gi).exec(hFive.text()));
-			allMoney=price*numSpanText;
-			$('#allMoney').text("￥"+allMoney);*/
+			/*改动相应的库存数量的标志位*/
+			var reserve = $(this).next().next();
+			/*首先得到该库存的数量*/
+			var reserveNum = parseFloat(/\d+/gi.exec(reserve.text()));
+			if(reserveNum > 0)
+			{
+				reserveNum--;
+				reserve.text("库存："+reserveNum);
+			}
+			if(reserveNum == 0)
+			{
+				$(this).addClass('disabled');
+			}
+			/*计算总金额*/
 			countAllMoney();
 
 		})
@@ -62,6 +71,14 @@ define(["jquery"],function(){
 				numSpan.removeClass('label-success');
 				$(this).addClass('disabled')
 			}
+
+			/*改动相应的库存数量的标志位*/
+			var reserve = $(this).next();
+			/*首先得到该库存的数量*/
+			var reserveNum = parseFloat(/\d+/gi.exec(reserve.text()));
+				reserveNum++;
+				reserve.text("库存："+reserveNum);
+			$(this).prev().removeClass('disabled')
 			
 			countAllMoney();
 

@@ -41,8 +41,8 @@ final public class HibernateUtil {
 	}
 	
 	//统一的一个修改和删除(批量 hql) hql"delete upate ...??"
-	public static void executeUpdate(String hql,String [] parameters){
-		
+	public static boolean executeUpdate(String hql,String [] parameters){
+		boolean b = false;
 		Session s=null;
 		Transaction tx=null;
 		
@@ -58,6 +58,7 @@ final public class HibernateUtil {
 			}
 			query.executeUpdate();
 			tx.commit();
+			b = true;
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new RuntimeException(e.getMessage());
@@ -70,10 +71,13 @@ final public class HibernateUtil {
 			
 		}
 		
+		return b;
+		
 	}
 	
 	//统一的添加的方法，添加的方法是最好写的
-	public  static void save(Object obj){
+	public  static boolean save(Object obj){
+		boolean b = false;
 		Session s=null;
 		Transaction tx=null;
 		
@@ -82,6 +86,7 @@ final public class HibernateUtil {
 			tx=s.beginTransaction();
 			s.save(obj);
 			tx.commit();
+			b = true;
 		} catch (Exception e) {
 			if(tx!=null){
 				tx.rollback();
@@ -94,11 +99,13 @@ final public class HibernateUtil {
 			}
 		}
 		
+		return b;
+		
 	}
 	
 	
 	//提供一个统一的查询方法(带分页) hql 形式 from 类  where 条件=? ..
-	public static List executeQueryByPage(String hql,String [] parameters,int pageSize,int pageNow){
+	public static List executeQueryByPage(String hql,String [] parameters,Integer pageSize,Integer pageNow){
 		Session s=null;
 		List list=null;
 		

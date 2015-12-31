@@ -1,13 +1,9 @@
 package controllerAction;
 
-import hibernate.util.HibernateUtil;
-
 import com.opensymphony.xwork2.ActionSupport;
 
-import dao.IUserDao;
-import dao.UserDao;
-
 import pojo.User;
+import serviceFactory.Service;
 
 public class LoginAction extends ActionSupport{
 	
@@ -28,12 +24,9 @@ public class LoginAction extends ActionSupport{
 	public String execute()
 	{
 		String b = ERROR;
-		IUserDao userDao = new UserDao();
-		if(userDao.isValid(this.getUser().getNumber(), this.getUser().getPassword()))
+		
+		if(Service.getUserDao().isValid(this.getUser()))
 			b = SUCCESS;
 		return b;
 	}
-	
-	
-
 }
