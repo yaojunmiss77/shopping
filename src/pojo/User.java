@@ -7,6 +7,9 @@
  */
 package pojo;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @author yaojun
  * @category 用户表单
@@ -17,7 +20,7 @@ package pojo;
  * @param sex 员工性别
  * @param age 员工年龄
  * @param imagePath 员工图片路径
- * @param sellId 销售表单的id
+ * @param userSell 该员工所绑定的销售订单
  */
 public class User implements java.io.Serializable{
 	
@@ -29,12 +32,12 @@ public class User implements java.io.Serializable{
 	private String sex;
 	private Integer age;
 	private String imagePath;
-	private Integer sellId;
+	private Set userSell = new HashSet(0);
 	public User() {
 		super();
 	}
 	public User(String name, String number, String password, String telNumber,
-			String sex, Integer age, String imagePath, Integer sellId) {
+			String sex, Integer age, String imagePath, Set userSell) {
 		super();
 		this.name = name;
 		this.number = number;
@@ -43,7 +46,7 @@ public class User implements java.io.Serializable{
 		this.sex = sex;
 		this.age = age;
 		this.imagePath = imagePath;
-		this.sellId = sellId;
+		this.userSell = userSell;
 	}
 	public Integer getId() {
 		return id;
@@ -93,11 +96,11 @@ public class User implements java.io.Serializable{
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
 	}
-	public Integer getSellId() {
-		return sellId;
+	public Set getUserSell() {
+		return userSell;
 	}
-	public void setSellId(Integer sellId) {
-		this.sellId = sellId;
+	public void setUserSell(Set userSell) {
+		this.userSell = userSell;
 	}
 	
 }

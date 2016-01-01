@@ -38,9 +38,12 @@
 		org.hibernate.cache.HashtableCacheProvider
 	</property>
 	<property name="hbm2ddl.auto">update</property>
-	
-
 	<mapping resource="pojo/User.hbm.xml" />
+	<mapping resource="pojo/Sell.hbm.xml" />
+	<mapping resource="pojo/Goods.hbm.xml" />
+	
+ 	
+	
 	
 </session-factory>
 </hibernate-configuration>

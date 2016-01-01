@@ -1,4 +1,4 @@
-define(["jquery","cashier"],function(jquery,cashier){
+define(["jquery","cashier","warehouse"],function(jquery,cashier,warehouse){
 
 	/*该属性用于iframe切换页面用的*/
 	$('.frame-menu,a').click(function(){
