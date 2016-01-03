@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@taglib uri="/struts-tags" prefix="s"%>
+<%@ taglib prefix="s" uri="/struts-tags" %> 
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -38,289 +38,40 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <h2 style="margin-left: 8%;">找零：<h3 id="remainder">￥10</h3>
 </div>
 <div id="shop-list" style="overflow-y:auto; overflow-x:hidden; height:86%;">
-<div class="row">
-  <div class="col-sm-4 col-md-2" style="opacity:0.4;">
+
+ 
+
+
+
+             
+
+<s:iterator value="goods" status="minGoods"> 
+
+<s:if test="(#minGoods.count)%6 == 0">
+   <div class="row" style="border-bottom: 1px solid #ddd;">
+</s:if>
+
+  <div class="col-sm-4 col-md-2" >
     <div class="food">
-      <img src="app/img/foods/coca.png" class="img-circle" title="可口可乐" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
+      <img src=<s:property value="imagePath"/> class="img-circle" title=<s:property value="name"/> alt="..." style="vertical-align:top;"><span class="label">0</span>
       <div class="caption">
-      <h4>可口可乐</h4><h5>￥10/罐</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-4 col-md-2">
-    <div class="food">
-      <img src="app/img/foods/cans.png" alt="..."  style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>可奶</h4><h5>￥10/罐</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-
-    </div>
-  </div>
-  <div class="col-sm-4 col-md-2">
-    <div class="food">
-      <img src="app/img/foods/cans1.png" class="img-circle" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>百事可乐</h4><h5>￥10/罐</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-4 col-md-2">
-    <div class="food">
-      <img src="app/img/foods/coffee.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>咖啡</h4><h5>￥10/瓶</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-4 col-md-2">
-    <div class="food">
-      <img src="app/img/foods/melon_water.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>西瓜</h4><h5>￥10/个</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-4 col-md-2">
-    <div>
-      <img src="app/img/foods/apple.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>苹果</h4><h5>￥10/个</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  
-</div>
-<div class="row">
-  <div class="col-sm-6 col-md-2">
-    <div id="food">
-      <img src="app/img/foods/cans.png" alt="..."  style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>可奶</h4><h5>￥10/罐</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/cans1.png" class="img-circle" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>百事可乐</h4><h5>￥10/罐</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/coffee.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>咖啡</h4><h5>￥10/瓶</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/melon_water.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>西瓜</h4><h5>￥10/个</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/apple.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>苹果</h4><h5>￥10/个</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/burger.png" alt="..." title="汉堡包" style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>汉堡包</h4><h5>￥10/个</h5>
-        <p><button class="btn btn-success" role="button">+</button> <button href="#" class="btn btn-danger" role="button">-</button><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
+      <h4><s:property value="name"/></h4><h5>￥<s:property value="sellPrice"/>/罐</h5>
+        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger disabled" role="button" >-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：<s:property value="reserveNum"/></span></p>
       </div>
     </div>
   </div>
 
-</div>
-<div class="row">
-  <div class="col-sm-6 col-md-2">
-    <div id="food">
-      <img src="app/img/foods/cans.png" alt="..."  style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>可奶</h4><h5>￥10/罐</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
+<s:if test="(#minGoods.count)%6 == 0">
+   </div>
+</s:if>
 
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/cans1.png" class="img-circle" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>百事可乐</h4><h5>￥10/罐</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/coffee.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>咖啡</h4><h5>￥10/瓶</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/melon_water.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>西瓜</h4><h5>￥10/个</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/apple.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>苹果</h4><h5>￥10/个</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/burger.png" alt="..." title="汉堡包" style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>汉堡包</h4><h5>￥10/个</h5>
-        <p><button class="btn btn-success" role="button">+</button> <button href="#" class="btn btn-danger" role="button">-</button><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-
-</div>
-<div class="row">
-  <div class="col-sm-6 col-md-2">
-    <div id="food">
-      <img src="app/img/foods/cans.png" alt="..."  style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>可奶</h4><h5>￥10/罐</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/cans1.png" class="img-circle" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>百事可乐</h4><h5>￥10/罐</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/coffee.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>咖啡</h4><h5>￥10/瓶</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/melon_water.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>西瓜</h4><h5>￥10/个</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/apple.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>苹果</h4><h5>￥10/个</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/burger.png" alt="..." title="汉堡包" style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>汉堡包</h4><h5>￥10/个</h5>
-        <p><button class="btn btn-success" role="button">+</button> <button href="#" class="btn btn-danger" role="button">-</button><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-
-</div>
-<div class="row">
-  <div class="col-sm-6 col-md-2">
-    <div id="food">
-      <img src="app/img/foods/cans.png" alt="..."  style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>可奶</h4><h5>￥10/罐</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/cans1.png" class="img-circle" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>百事可乐</h4><h5>￥10/罐</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/coffee.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>咖啡</h4><h5>￥10/瓶</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/melon_water.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>西瓜</h4><h5>￥10/个</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-2">
-    <div>
-      <img src="app/img/foods/apple.png" alt="..." style="vertical-align:top;"><span class="label label-success">4</span>
-      <div class="caption">
-      <h4>苹果</h4><h5>￥10/个</h5>
-        <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger" role="button">-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：10</span></p>
-      </div>
-    </div>
-  </div>
+</s:iterator>
 
 
 </div>
-</div>
+             
+
+
 
 <!--下面是requirejs框架-->
     <script data-main="app/js/mine/main.js" src="app/js/requirejs/require.js"></script>

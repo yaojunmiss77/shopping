@@ -1,16 +1,13 @@
 package controllerAction;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import pojo.User;
 import serviceFactory.Service;
 
-public class LoginAction extends ActionSupport{
+public class LoginAction{
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private User user;
 
 	public User getUser() {
@@ -21,12 +18,14 @@ public class LoginAction extends ActionSupport{
 		this.user = user;
 	}
 	
+	
 	public String execute()
 	{
-		String b = ERROR;
+		String b = "error";
+		ActionContext.getContext().getSession().put("yaojun", "我是姚俊");
 		
 		if(Service.getUserDao().isValid(this.getUser()))
-			b = SUCCESS;
+			b = "success";
 		return b;
 	}
 }

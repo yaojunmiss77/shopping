@@ -20,7 +20,7 @@
         <property name="offerings" type="java.lang.String">
             <column name="offerings" length="64"/>
         </property>
-        <property name="purchasePrice" type="java.lang.String">
+        <property name="purchasePrice" type="float">
             <column name="purchasePrice" length="64"/>
         </property>
         <property name="reserveNum" type="java.lang.Integer">
@@ -29,11 +29,14 @@
         <property name="imagePath" type="java.lang.String">
             <column name="imagePath" length="64"/>
         </property>
-        <property name="sellPrice" type="java.lang.String">
+        <property name="sellPrice" type="float">
             <column name="sellPrice" length="64"/>
         </property>
         <property name="type" type="java.lang.String">
             <column name="type" length="64"/>
+        </property>
+        <property name="sellNum" type="java.lang.Integer">
+            <column name="sellNum" length="64"/>
         </property>
         <many-to-one name="sell" class="pojo.Sell" fetch="select">
             <column name="sId" precision="22" scale="0" />

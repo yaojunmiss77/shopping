@@ -79,7 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <section class="sidebar" id="side-gaoliang">
           <ul class="sidebar-menu">
 
-            <li style="padding-left:15px;"><a class="frame-menu" href="app/view/sellManager/cashier.jsp">
+            <li style="padding-left:15px;"><a class="frame-menu" href="CashierAction.action">
             <img src="app/img/sell.png"/> <span>收银管理</span></a></li>
 
             <li style="padding-left:15px;"><a class="frame-menu" href="app/view/sellManager/sell.jsp">
@@ -124,7 +124,7 @@ function  gaoliang(){
          <div class="content-wrapper">
           <!-- 主体开始 -->
   
-        <iframe id="if" src="app/view/sellManager/cashier.jsp" style="width:100%; height:100%; "></iframe>
+        <iframe id="if" src="CashierAction.action" style="width:100%; height:100%; "></iframe>
 
     <!-- 主体结束 -->
          </div>

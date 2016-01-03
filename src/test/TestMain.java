@@ -5,6 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import dao.ObjectDao;
+import hibernate.util.HibernateUtil;
 import pojo.Goods;
 import pojo.User;
 
@@ -94,7 +95,42 @@ public class TestMain {
 	user.setNumber("yaojun");
 	user.setPassword("123");
 	
-	userDao.insertObject(user);
+	/*userDao.insertObject(user);*/
+	
+	Goods good = new Goods();
+	good.setImagePath("app/img/foods/chicken.png");
+	good.setName("鸡腿");
+	good.setNumber("1132");
+	good.setOfferings("金华食品有限公司");
+	good.setPurchasePrice(23F);
+	good.setSellPrice(25F);
+	good.setType("熟食");
+	good.setSellNum(3);
+	userDao.insertObject(good);
+	/*String hql = "select distinct type from Goods";
+	
+	
+	
+	List list = HibernateUtil.executeQuery(hql, null);
+	
+	
+	
+	for(int i=0;i<list.size();i++)
+	{
+		String[] parames={list.get(i).toString()};
+		System.out.println("类型为:"+list.get(i).toString());
+		List list3 = HibernateUtil.executeQuery("from Goods where type=?", parames);
+		for(int j=0;j<list3.size();j++)
+		{
+			System.out.println(((Goods)list3.get(j)).getName());
+		}
+	}
+	
+	List list4 = HibernateUtil.executeQuery("select count(*) from Goods group by type", null);
+	for(Object o : list4)
+	{
+		System.out.println("类型的数量为:"+o);
+	}*/
 	}
 	
 } 

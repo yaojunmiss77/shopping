@@ -2,6 +2,17 @@ define(["jquery"],function(){
 
 	function cashier(){
 
+		/*首先检测库粗库存量，如果库存量为零，则使得该dom编程灰色*/
+		$.each($('.btn-danger'),function(){
+
+			var gitNum = parseFloat(/\d+/gi.exec($(this).next().text()));
+			if(gitNum <=0)
+			{
+				$(this).parent().parent().parent().parent().css("opacity",0.4);
+				$(this).prev().addClass('disabled');
+			}
+		})
+
 		/*首先定义总价*/
 		var allMoney=0;
 
@@ -13,7 +24,7 @@ define(["jquery"],function(){
 			$.each($('.food'),function(){
 
 			var num = $(this).children('span').text();
-			var price = parseFloat(/\d+/gi.exec($(this).children('div').children('h5').text()));
+			var price = parseFloat(/\d+\.\d+/gi.exec($(this).children('div').children('h5').text()));
 			allMoney+=num*price;
 
 		})
@@ -43,7 +54,7 @@ define(["jquery"],function(){
 			/*改动相应的库存数量的标志位*/
 			var reserve = $(this).next().next();
 			/*首先得到该库存的数量*/
-			var reserveNum = parseFloat(/\d+/gi.exec(reserve.text()));
+			var reserveNum = parseFloat(/\d+\.\d+/gi.exec(reserve.text()));
 			if(reserveNum > 0)
 			{
 				reserveNum--;
@@ -75,7 +86,7 @@ define(["jquery"],function(){
 			/*改动相应的库存数量的标志位*/
 			var reserve = $(this).next();
 			/*首先得到该库存的数量*/
-			var reserveNum = parseFloat(/\d+/gi.exec(reserve.text()));
+			var reserveNum = parseFloat(/\d+\.\d+/gi.exec(reserve.text()));
 				reserveNum++;
 				reserve.text("库存："+reserveNum);
 			$(this).prev().removeClass('disabled')
@@ -105,9 +116,9 @@ define(["jquery"],function(){
 
 		$(document).keyup(function(){
 		var remainder = 0;
-		remainder = parseFloat($(':input:text').val()) - parseFloat(/\d+/gi.exec($('#allMoney').text()));
+		remainder = parseFloat($(':input:text').val()) - parseFloat(/\d+\.\d+/gi.exec($('#allMoney').text()));
 		if(remainder > 0)
-			$('#remainder').text("￥"+remainder);
+			$('#remainder').text("￥"+remainder.toFixed(1));
 		else
 			$('#remainder').text("余额不足");
 	})

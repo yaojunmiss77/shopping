@@ -12,12 +12,13 @@ package pojo;
  * @category 商品表单
  * @param name 商品名称
  * @param number 商品编号
- * @param type 商品类型
+ * @param type 商品类型 0表示饮品 1表示水果 2表示纸类 4表示饼干 5表示熟食 6表示烟类 7表示酒类 8表示学习
  * @param reserveNum 库存数量
  * @param offerings 供货商
  * @param sellPrice 售价
  * @param purchasePrice 进价
  * @param sellId 销售表单的id主键
+ * @param sellNum 销量
  *
  */
 public class Goods implements java.io.Serializable{
@@ -25,18 +26,20 @@ public class Goods implements java.io.Serializable{
 	private Integer id;
 	private String name;
 	private String number;
-	private Integer type;
+	private String type;
 	private Integer reserveNum;
 	private String imagePath;
 	private String offerings;
 	private Float sellPrice;
 	private Float purchasePrice;
+	private Integer sellNum;
 	private Sell sell;
+	
 	public Goods() {
 		super();
 	}
-	public Goods(String name, String number, Integer type, Integer reserveNum, String imagePath, String offerings, Float sellPrice,
-			Float purchasePrice, Sell sell) {
+	public Goods(String name, String number, String type, Integer reserveNum, String imagePath, String offerings, Float sellPrice,
+			Float purchasePrice,Integer sellNum, Sell sell) {
 		super();
 		this.name = name;
 		this.number = number;
@@ -46,7 +49,9 @@ public class Goods implements java.io.Serializable{
 		this.offerings = offerings;
 		this.sellPrice = sellPrice;
 		this.purchasePrice = purchasePrice;
+		this.sellNum = sellNum;
 		this.sell = sell;
+		
 	}
 	public Integer getId() {
 		return id;
@@ -66,10 +71,10 @@ public class Goods implements java.io.Serializable{
 	public void setNumber(String number) {
 		this.number = number;
 	}
-	public Integer getType() {
+	public String getType() {
 		return type;
 	}
-	public void setType(Integer type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 	public Integer getReserveNum() {
@@ -101,6 +106,12 @@ public class Goods implements java.io.Serializable{
 	}
 	public void setPurchasePrice(Float purchasePrice) {
 		this.purchasePrice = purchasePrice;
+	}
+	public Integer getSellNum() {
+		return sellNum;
+	}
+	public void setSellNum(Integer sellNum) {
+		this.sellNum = sellNum;
 	}
 	public Sell getSell() {
 		return sell;
