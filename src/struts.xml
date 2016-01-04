@@ -20,6 +20,10 @@
     <result name="success">app/view/sellManager/warehouse.jsp</result>  
     </action>
     
+     <action name="AccountAction" class="controllerAction.AccountAction">    
+    <result name="success">app/view/sellManager/account.jsp</result>  
+    </action>
+    
     
     </package>  
 </struts>    
