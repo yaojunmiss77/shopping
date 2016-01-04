@@ -19,8 +19,10 @@ package pojo;
  * @param purchasePrice 进价
  * @param sellId 销售表单的id主键
  * @param sellNum 销量
+ * @param unit 单位
  *
  */
+@SuppressWarnings("serial")
 public class Goods implements java.io.Serializable{
 	
 	private Integer id;
@@ -33,13 +35,15 @@ public class Goods implements java.io.Serializable{
 	private Float sellPrice;
 	private Float purchasePrice;
 	private Integer sellNum;
+	private String unit;
+	private Float discount;
 	private Sell sell;
 	
 	public Goods() {
 		super();
 	}
 	public Goods(String name, String number, String type, Integer reserveNum, String imagePath, String offerings, Float sellPrice,
-			Float purchasePrice,Integer sellNum, Sell sell) {
+			Float purchasePrice,Integer sellNum,String unit,Float discount, Sell sell) {
 		super();
 		this.name = name;
 		this.number = number;
@@ -50,6 +54,8 @@ public class Goods implements java.io.Serializable{
 		this.sellPrice = sellPrice;
 		this.purchasePrice = purchasePrice;
 		this.sellNum = sellNum;
+		this.unit =  unit;
+		this.discount = discount;
 		this.sell = sell;
 		
 	}
@@ -112,6 +118,19 @@ public class Goods implements java.io.Serializable{
 	}
 	public void setSellNum(Integer sellNum) {
 		this.sellNum = sellNum;
+	}
+	public String getUnit() {
+		return unit;
+	}
+	public void setUnit(String unit) {
+		this.unit = unit;
+	}
+	
+	public Float getDiscount() {
+		return discount;
+	}
+	public void setDiscount(Float discount) {
+		this.discount = discount;
 	}
 	public Sell getSell() {
 		return sell;

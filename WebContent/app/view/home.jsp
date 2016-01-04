@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*,pojo.User" pageEncoding="utf-8"%>
 <%@taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
@@ -27,10 +27,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      folder instead of downloading all of them to reduce the load. -->
 <link href="app/style/bootstrap/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
 <link href="app/style/mine/home.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="app/style/sui/sui.min.css" />
-<link rel="stylesheet" href="app/style/sui/sui-append.min.css" />
-<script src="app/js/sui/sui.min.js"></script>
-
   </head>
   <!-- ADD THE CLASS layout-boxed TO GET A BOXED LAYOUT -->
   <body  class=" sidebar-mini skin-blue-light" >
@@ -66,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
             <div class="add0">
                 <span class="addRoom"><i class="fa fa-user"></i>
-                    欢迎您：<span>姚俊</span>
+                    欢迎您：<span><%=((User)session.getAttribute("user")).getName() %></span>
                </span>
             </div>
         </nav>
@@ -79,16 +75,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <section class="sidebar" id="side-gaoliang">
           <ul class="sidebar-menu">
 
-            <li style="padding-left:15px;"><a class="frame-menu" href="CashierAction.action">
+            <li><a class="frame-menu" href="CashierAction.action">
             <img src="app/img/sell.png"/> <span>收银管理</span></a></li>
 
-            <li style="padding-left:15px;"><a class="frame-menu" href="app/view/sellManager/sell.jsp">
+            <li><a class="frame-menu" href="app/view/sellManager/sell.jsp">
            <img src="app/img/people.png"/><span>人事管理</span></a></li>
 
-          <li style="padding-left:15px;"><a class="frame-menu" class="frame-menu" href="#/addPerson/">
+          <li><a class="frame-menu" class="frame-menu" href="#/addPerson/">
           <img src="app/img/accounts.png"/> <span>账单管理</span></a></li>
 
-           <li style="padding-left:15px;" id="cangku"><a class="frame-menu" href="app/view/sellManager/warehouse.jsp">
+           <li><a class="frame-menu" href="WarehouseAction.action">
            <img src="app/img/money.png"/><span>仓库管理</span></a></li>
 
            
@@ -140,9 +136,8 @@ function  gaoliang(){
     <!--尾部结束-->
 
     <!--下面是requirejs框架-->
-    <script data-main="app/js/mine/main.js" src="app/js/requirejs/require.js"></script>
-    
-    </script>
+<script data-main="app/js/mine/main.js" src="app/js/requirejs/require.js"></script>
+  
 
 
 

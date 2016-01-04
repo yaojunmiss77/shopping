@@ -12,14 +12,18 @@ require.config({
     //requirejs默认对文件进行js扩展名处理，如果加上js或者以http、https开头，则不处理
     paths:{
         //定义组件名称，以及组件js所在的路径
-        "jquery":"../bootstrap/jQuery-2.1.4.min"
+        "jquery":"../bootstrap/jQuery-2.1.4.min",
+        "bootstrap":"../bootstrap/bootstrap.min.js"
         
     },
     shim:{
 
         "jquery":{
             exports: "jquery"
-        }
+        },
+	    "bootstrap":{
+	    	exports: "bootstrap"
+	    }
         
     }
 });

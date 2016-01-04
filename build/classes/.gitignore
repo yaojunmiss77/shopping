@@ -1,8 +1,4 @@
 /controllerAction/
-/dao/
-/hibernate/
-/hibernate.cfg.xml
-/pojo/
-/struts.xml
 /test/
 /serviceFactory/
+/pojo/

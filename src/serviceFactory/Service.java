@@ -5,7 +5,7 @@ import dao.ObjectDao;
 
 public class Service {
 	
-	public static IObjectDao getUserDao()
+	public static IObjectDao getObjectDao()
 	{
 		return new ObjectDao();
 	}

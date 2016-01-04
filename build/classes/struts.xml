@@ -13,6 +13,13 @@
     <result name="success">app/view/sellManager/cashier.jsp</result>  
     </action>
     
+    <action name="CashierSubmitAction" class="controllerAction.CashierSubmitAction">    
+    </action>
+    
+    <action name="WarehouseAction" class="controllerAction.WarehouseAction">    
+    <result name="success">app/view/sellManager/warehouse.jsp</result>  
+    </action>
+    
     
     </package>  
 </struts>    

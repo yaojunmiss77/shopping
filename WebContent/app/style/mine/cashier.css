@@ -18,9 +18,7 @@ body{
 .col-md-2{
 	text-align: center;
 	padding-bottom: 0px;
-
 	border-right: 1px solid #ddd;
-
 }
 h5{
 	color: red;
@@ -33,6 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .row{
 	border-bottom: 1px solid #ddd;
+	border-top:1px solid #ddd;
 	margin-bottom: 10px;
 }
 
@@ -41,9 +40,12 @@ h2,h3,h3,h4,h5,h6{
 }
 
 .page-header{
-	background-color: #cc0033;
+	background-color: #ff6868;
 	color: white;
 }
 .page-header small{
 	color: white;
+}
+.page-header{
+	margin:2px 0 2px 0;
 }

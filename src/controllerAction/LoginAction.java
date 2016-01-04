@@ -6,7 +6,8 @@ import com.opensymphony.xwork2.ActionSupport;
 import pojo.User;
 import serviceFactory.Service;
 
-public class LoginAction{
+@SuppressWarnings("serial")
+public class LoginAction extends ActionSupport{
 	
 	private User user;
 
@@ -21,11 +22,11 @@ public class LoginAction{
 	
 	public String execute()
 	{
-		String b = "error";
-		ActionContext.getContext().getSession().put("yaojun", "我是姚俊");
+		String b = ERROR;
+		ActionContext.getContext().getSession().put("user",Service.getObjectDao().getObjectByNumber(this.getUser()));
 		
-		if(Service.getUserDao().isValid(this.getUser()))
-			b = "success";
+		if(Service.getObjectDao().isValid(this.getUser()))
+			b = SUCCESS;
 		return b;
 	}
 }

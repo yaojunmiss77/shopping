@@ -26,7 +26,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- AdminLTE Skins. Choose a skin from the css/skins
      folder instead of downloading all of them to reduce the load. -->
 <link href="app/style/bootstrap/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+<!-- bootstrap wysihtml5 - text editor -->
+    <link href="app/style/bootstrap/css/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
 <link href="app/style/mine/warehouse.css" rel="stylesheet" type="text/css" />
+
 
   </head>
 <body>
@@ -49,246 +52,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <th>商品名称</th>
                     <th>商品类型</th>
                     <th>库存数量</th>
+                    <th>销量</th>
                     <th>供货商</th>
                     <th>商品进价</th>
                     <th>商品售价</th>
                     <th>商品折扣</th>
                     <th>操作</th>
                 </tr>
+                <s:iterator value="goods" status="minGoods"> 
                 <tr>
-                    <td>312321</td>
-                    <td>可口可乐</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success" style="vertical-align: cneter;">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
+                    <td><s:property value="number"/></td>
+                    <td><s:property value="name"/></td>
+                    <td><s:property value="type"/></td>
+                    <td><span class="label label-success" style="vertical-align: cneter;"><s:property value="reserveNum"/></span></td>
+                    <td><s:property value="sellNum"/></td>
+                    <td><s:property value="offerings"/></td>
+                    <td>￥<s:property value="purchasePrice"/></td>
+                    <td>￥<s:property value="sellPrice"/></td>
+                    <td><s:property value="discount"/></td>
+                    <td>
+                    <btton class="btn btn-success">编辑</btton>
                     <btton class="btn btn-danger">删除</btton>
                     </td>
                 </tr>
-                <tr>
-                    <td>312321</td>
-                    <td>百事可乐</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>雪花啤酒</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>金华火腿</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>康师傅方便面</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>青岛啤酒</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>清风餐巾纸</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>辣条</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>老干妈</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>稻花香</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>种子酒</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>五粮液</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>可口可乐</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>可口可乐</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>可口可乐</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>可口可乐</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>可口可乐</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>可口可乐</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>可口可乐</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>可口可乐</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr><tr>
-                    <td>312321</td>
-                    <td>可口可乐</td>
-                    <td>饮品</td>
-                    <td><span class="label label-success">200</span></td>
-                    <td>百事公司</td>
-                    <td>￥10</td>
-                    <td>￥20</td>
-                    <td>1</td>
-                    <td><btton class="btn btn-success">编辑</btton>
-                    <btton class="btn btn-danger">删除</btton>
-                </tr>
+                </s:iterator>
                 </tbody></table>
                 
                 <nav>
@@ -317,10 +104,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 </div>
 </body>
+ 
 <!--下面是requirejs框架-->
     <script data-main="app/js/mine/main.js" src="app/js/requirejs/require.js"></script>
+   </script>
     
-    </script>
+    
 </html>
 
 

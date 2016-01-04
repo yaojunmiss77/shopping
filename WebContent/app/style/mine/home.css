@@ -44,10 +44,12 @@
 
 aside section ul li a img{
 	width: 36px;
+	margin-right: 4%;
 }
 
 aside section ul li{
 	border-bottom: 1px solid #ddd;
+	padding-left: 2%;
 }
 
 /* 防止body出现滚动条 */
@@ -58,4 +60,9 @@ body{
 /* 建立屏幕适当的大小 */
 .conternerSize{
 	height: 550px;
+}
+       
+aside section ul li a span{
+
+	font-size: 0.1em;
 }

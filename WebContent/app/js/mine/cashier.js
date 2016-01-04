@@ -1,9 +1,11 @@
 define(["jquery"],function(){
 
+	var goods = [];
+
 	function cashier(){
 
 		/*首先检测库粗库存量，如果库存量为零，则使得该dom编程灰色*/
-		$.each($('.btn-danger'),function(){
+		$.each($('.caption p .btn-danger'),function(){
 
 			var gitNum = parseFloat(/\d+/gi.exec($(this).next().text()));
 			if(gitNum <=0)
@@ -37,7 +39,7 @@ define(["jquery"],function(){
 
 		/*点击加号进行加计算*/
 
-		$('.btn-success').click(function(){
+		$('.caption p .btn-success').click(function(){
 
 			var hFive = $(this).parent().prev();
 
@@ -54,7 +56,8 @@ define(["jquery"],function(){
 			/*改动相应的库存数量的标志位*/
 			var reserve = $(this).next().next();
 			/*首先得到该库存的数量*/
-			var reserveNum = parseFloat(/\d+\.\d+/gi.exec(reserve.text()));
+			var reserveNum = parseFloat(/\d+/gi.exec(reserve.text()));
+			
 			if(reserveNum > 0)
 			{
 				reserveNum--;
@@ -67,11 +70,16 @@ define(["jquery"],function(){
 			/*计算总金额*/
 			countAllMoney();
 
+			/*计算找零*/
+			change();
+
+			changeGoods();
+
 		})
 
 		/*点击减号进行相应的减计算并进行相应的处理*/
 
-		$('.btn-danger').click(function(){
+		$('.caption p .btn-danger').click(function(){
 			var hFive = $(this).parent().prev();
 			var numSpan = hFive.parent().prev();
 			var numSpanText = (parseInt(numSpan.text()));
@@ -86,41 +94,32 @@ define(["jquery"],function(){
 			/*改动相应的库存数量的标志位*/
 			var reserve = $(this).next();
 			/*首先得到该库存的数量*/
-			var reserveNum = parseFloat(/\d+\.\d+/gi.exec(reserve.text()));
+			var reserveNum = parseFloat(/\d+/gi.exec(reserve.text()));
 				reserveNum++;
 				reserve.text("库存："+reserveNum);
 			$(this).prev().removeClass('disabled')
 			
+			/*计算总金额*/
 			countAllMoney();
+
+			/*计算找零*/
+			change();
+
+			changeGoods();
 
 		})
 
 	}
 
-	/*当按键键入enter的时候进行提交*/
-	$(document).keydown(function(){
-		if(event.keyCode == 13)
-			if(confirm("你确定提交吗？"))
-			{
-				window.alert("我键入了Enter建");
-			}
-			else
-			{
-				window.alert("我已经放弃了");
-			}
-	})
 
 
 	/*当支付金额文本框得到焦点的时候开始给docuemnt放入点击事件*/
 	$(':input:text').focus(function(){
 
 		$(document).keyup(function(){
-		var remainder = 0;
-		remainder = parseFloat($(':input:text').val()) - parseFloat(/\d+\.\d+/gi.exec($('#allMoney').text()));
-		if(remainder > 0)
-			$('#remainder').text("￥"+remainder.toFixed(1));
-		else
-			$('#remainder').text("余额不足");
+
+			change();
+		
 	})
 
 	})
@@ -131,6 +130,57 @@ define(["jquery"],function(){
 		$(document).unbind('keyup');
 	})
 
+
+	/*计算余额的函数*/
+	function change()
+	{
+		var remainder = 0;
+		remainder = parseFloat($(':input:text').val()) - parseFloat(/\d+/gi.exec($('#allMoney').text()));
+		if(remainder > 0)
+			$('#remainder').text("￥"+remainder.toFixed(1));
+		else
+			$('#remainder').text("余额不足");
+	}
+
+	/*现在开始进行相应的表单的提交事件*/
+	function enterDown()
+	{
+			/*当按键键入enter的时候进行提交*/
+		$(document).keydown(function(){
+			
+			if(event.keyCode == 13)
+			{
+				if(confirm("你确定提交吗？"))
+				{
+				 $.post("CashierSubmitAction.action",
+				  {
+				    goodsData:JSON.stringify(goods),  /*该函数用于把goods的json对象转化成json形式的字符串数组*/
+				    async: false
+				  },function(data,status){
+
+				  	location.reload();
+
+				  });
+				}
+			}
+				
+	
+		})
+	}
+
+	/*当键入enter的时候进行相应的提交*/
+	enterDown();
+
+
+
+		/*现在开始收集所有的已经卖出的东西的编号和数量*/
+		function changeGoods()
+		{
+			 $.each($('.food'),function(index,sport){
+			 goods[index]={number:$(this).next().text(),sellNum:$(this).children('img').next().text()};
+			});
+		}
+		
 
 	return{
 

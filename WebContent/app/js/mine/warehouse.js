@@ -2,10 +2,18 @@ define(["jquery"],function(jquery){
 
 	function warehouse()
 	{
-		$('#warehouseTable tbody tr td span').bind('click',function(){
-			/*e.target.innerHTML="fdsafds";
-			e.target.innerHTML = "fdsafsad";*/
-			window.alert($(this).val());
+		$('#warehouseTable').bind('click',function(e){
+
+			if(e.target.innerHTML == "编辑")
+			{
+				window.alert("我已经点击了编辑");
+			}
+			else if(e.target.innerHTML == "删除")
+			{
+				window.alert("我已经点击了删除");
+			}
+
+		
 		})
 	}
 

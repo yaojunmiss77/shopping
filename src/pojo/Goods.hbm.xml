@@ -38,6 +38,12 @@
         <property name="sellNum" type="java.lang.Integer">
             <column name="sellNum" length="64"/>
         </property>
+        <property name="unit" type="java.lang.String">
+            <column name="unit" length="64"/>
+        </property>
+        <property name="discount" type="float">
+            <column name="discount" length="64"/>
+        </property>
         <many-to-one name="sell" class="pojo.Sell" fetch="select">
             <column name="sId" precision="22" scale="0" />
         </many-to-one>

@@ -35,43 +35,38 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <h2>总价：</h2><h3 id="allMoney">￥24</h3>
   <h2 style="margin-left: 10%;">支付：<input type="text" style="width:20%;" placeholder="输入付款金额" />
   <h2 style="margin-left: 3%;">折扣：<h3>0.85</h3>
-  <h2 style="margin-left: 8%;">找零：<h3 id="remainder">￥10</h3>
+  <h2 style="margin-left: 8%;">找零：<h3 id="remainder">￥0</h3>
 </div>
 <div id="shop-list" style="overflow-y:auto; overflow-x:hidden; height:86%;">
+       
 
- 
+<s:iterator value="map" status="minMap"> 
 
+<div class="page-header">
+  <h1><s:property value="lists[#minMap.count-1].name"/> <small><s:property value="lists[#minMap.count-1].content"/></small></h1>
+</div>
 
-
-             
-
-<s:iterator value="goods" status="minGoods"> 
-
-<s:if test="(#minGoods.count)%6 == 0">
    <div class="row" style="border-bottom: 1px solid #ddd;">
-</s:if>
-
+   <s:iterator value="value">
   <div class="col-sm-4 col-md-2" >
-    <div class="food">
-      <img src=<s:property value="imagePath"/> class="img-circle" title=<s:property value="name"/> alt="..." style="vertical-align:top;"><span class="label">0</span>
+    <div class="food" name="food">
+     
+      <img src=<s:property value="imagePath"/> title=<s:property value="name"/> alt="..." style="vertical-align:top;"><span class="label">0</span>
       <div class="caption">
-      <h4><s:property value="name"/></h4><h5>￥<s:property value="sellPrice"/>/罐</h5>
+      <h4><s:property value="name"/></h4><h5>￥<s:property value="sellPrice"/>/<span><s:property value="unit"/></span></h5>
         <p><a href="#" class="btn btn-success" role="button">+</a> <a href="#" class="btn btn-danger disabled" role="button" >-</a><span style="margin-left: 10%; color:#fff; background-color:#FF3300; ">库存：<s:property value="reserveNum"/></span></p>
       </div>
     </div>
+    <!-- 元素编号的控制-->
+     <span style="display:none;"><s:property value="number"/> </span>
   </div>
-
-<s:if test="(#minGoods.count)%6 == 0">
-   </div>
-</s:if>
+</s:iterator>
+ </div>
 
 </s:iterator>
 
-
 </div>
-             
-
-
+           
 
 <!--下面是requirejs框架-->
     <script data-main="app/js/mine/main.js" src="app/js/requirejs/require.js"></script>

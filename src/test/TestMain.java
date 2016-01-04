@@ -97,23 +97,29 @@ public class TestMain {
 	
 	/*userDao.insertObject(user);*/
 	
-	Goods good = new Goods();
-	good.setImagePath("app/img/foods/chicken.png");
-	good.setName("鸡腿");
-	good.setNumber("1132");
+/*	Goods good = new Goods();
+	good.setImagePath("app/img/foods/paper.png");
+	good.setName("纸巾");
+	good.setNumber("5453232904322");
 	good.setOfferings("金华食品有限公司");
 	good.setPurchasePrice(23F);
 	good.setSellPrice(25F);
-	good.setType("熟食");
+	good.setType("生活用品");
 	good.setSellNum(3);
-	userDao.insertObject(good);
+	userDao.insertObject(good);*/
 	/*String hql = "select distinct type from Goods";
+	 * 
+	 * 
+	 * 
+	 * 
 	
 	
-	
+	List list5 = null;
 	List list = HibernateUtil.executeQuery(hql, null);
 	
 	
+	
+
 	
 	for(int i=0;i<list.size();i++)
 	{
@@ -123,14 +129,19 @@ public class TestMain {
 		for(int j=0;j<list3.size();j++)
 		{
 			System.out.println(((Goods)list3.get(j)).getName());
+			list5.add(list3.get(i));
 		}
 	}
 	
-	List list4 = HibernateUtil.executeQuery("select count(*) from Goods group by type", null);
+	List list4 = HibernateUtil.executeQuery("select distinct type from Goods", null);
+	
 	for(Object o : list4)
 	{
 		System.out.println("类型的数量为:"+o);
 	}*/
-	}
+	String[] parameters ={"21",String.valueOf("1132")};
+	HibernateUtil.executeUpdate("update Goods set reserveNum = 456456,sellNum=45 where number='08'", null);
+	
+ }
 	
 } 
