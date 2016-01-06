@@ -71,7 +71,88 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <td>￥<s:property value="sellPrice"/></td>
                     <td><s:property value="discount"/></td>
                     <td>
-                    <btton class="btn btn-success">编辑</btton>
+                    <!-- Button trigger modal -->
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+  编辑
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">商品编辑</h4>
+      </div>
+      <div class="modal-body" style="height:68%; overflow:auto;">
+        <div class="box-body table-responsive no-padding">
+             <table class="table table-hover table-striped">
+                <tbody><tr>
+                    <th>编号</th>
+                    <th>名称</th>
+                    <th>类型</th>
+                </tr>
+                <tr>
+                    <td>183</td>
+                    <td>赤诚</td>
+                    <td>11-7-2014</td>
+                </tr>
+                <tr>
+                    <td>219</td>
+                    <td>赤诚</td>
+                    <td>11-7-2014</td>
+                </tr>
+                <tr>
+                    <td>657</td>
+                    <td>赤诚</td>
+                    <td>11-7-2014</td>
+                </tr>
+                <tr>
+                    <td>657</td>
+                    <td>赤诚</td>
+                    <td>11-7-2014</td>
+                </tr>
+                <tr>
+                    <td>657</td>
+                    <td>赤诚</td>
+                    <td>11-7-2014</td>
+                </tr>
+                <tr>
+                    <td>657</td>
+                    <td>赤诚</td>
+                    <td>11-7-2014</td>
+                </tr>
+                </tbody></table>
+                
+                <nav>
+  <ul class="pagination pagination-sm no-margin pull-right" style="padding-right: 8%; padding-top:2%; padding-bottom: 2%">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+                
+        </div><!-- /.box-body -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary">保存</button>
+      </div>
+    </div>
+  </div>
+</div>
                     <btton class="btn btn-danger">删除</btton>
                     </td>
                 </tr>
@@ -104,6 +185,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 </div>
 </body>
+
+<script  src="app/js/bootstrap/jQuery-2.1.4.min.js"></script>
+<script  src="app/js/bootstrap/bootstrap.min.js"></script>
  
 <!--下面是requirejs框架-->
     <script data-main="app/js/mine/main.js" src="app/js/requirejs/require.js"></script>

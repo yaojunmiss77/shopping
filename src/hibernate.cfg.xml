@@ -41,6 +41,7 @@
 	<mapping resource="pojo/User.hbm.xml" />
 	<mapping resource="pojo/Sell.hbm.xml" />
 	<mapping resource="pojo/Goods.hbm.xml" />
+	<mapping resource="pojo/SellDetail.hbm.xml" />
 	
  	
 	

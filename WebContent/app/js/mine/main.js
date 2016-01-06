@@ -27,8 +27,8 @@ require.config({
         
     }
 });
-require(["jquery","home"],
-    function(jquery,home){
+require(["home"],
+    function(home){
     //requirejs 启动
    
 

@@ -1,6 +1,6 @@
-define(["jquery"],function(jquery){
+define([],function(){
 
-	function warehouse()
+	/*function warehouse()
 	{
 		$('#warehouseTable').bind('click',function(e){
 
@@ -15,9 +15,9 @@ define(["jquery"],function(jquery){
 
 		
 		})
-	}
+	}*/
 
-	return{
+	/*return{
 		warehouse:warehouse()
-	}
+	}*/
 })

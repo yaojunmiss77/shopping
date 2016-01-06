@@ -96,17 +96,17 @@ public class TestMain {
 	user.setPassword("123");
 	
 	/*userDao.insertObject(user);*/
-	
-/*	Goods good = new Goods();
-	good.setImagePath("app/img/foods/paper.png");
-	good.setName("纸巾");
-	good.setNumber("5453232904322");
+		Goods good = new Goods();
+	good.setImagePath("app/img/foods/banana.png");
+	good.setName("香蕉");
+	good.setNumber("21044342537564541322");
 	good.setOfferings("金华食品有限公司");
 	good.setPurchasePrice(23F);
 	good.setSellPrice(25F);
-	good.setType("生活用品");
-	good.setSellNum(3);
-	userDao.insertObject(good);*/
+	good.setType("水果");
+	good.setSellNum(0);
+	good.setReserveNum(34);;
+	userDao.insertObject(good);
 	/*String hql = "select distinct type from Goods";
 	 * 
 	 * 
@@ -139,8 +139,8 @@ public class TestMain {
 	{
 		System.out.println("类型的数量为:"+o);
 	}*/
-	String[] parameters ={"21",String.valueOf("1132")};
-	HibernateUtil.executeUpdate("update Goods set reserveNum = 456456,sellNum=45 where number='08'", null);
+	/*String[] parameters ={"21",String.valueOf("1132")};
+	HibernateUtil.executeUpdate("update Goods set reserveNum = 456456,sellNum=45 where number='08'", null);*/
 	
  }
 	

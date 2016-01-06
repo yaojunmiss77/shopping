@@ -6,6 +6,10 @@
  *
  */
 package pojo;
+
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * 
  * @author yaojun
@@ -37,13 +41,13 @@ public class Goods implements java.io.Serializable{
 	private Integer sellNum;
 	private String unit;
 	private Float discount;
-	private Sell sell;
+	private Set sellDetails = new HashSet(0);
 	
 	public Goods() {
 		super();
 	}
 	public Goods(String name, String number, String type, Integer reserveNum, String imagePath, String offerings, Float sellPrice,
-			Float purchasePrice,Integer sellNum,String unit,Float discount, Sell sell) {
+			Float purchasePrice,Integer sellNum,String unit,Float discount,Set sellDetails) {
 		super();
 		this.name = name;
 		this.number = number;
@@ -56,7 +60,7 @@ public class Goods implements java.io.Serializable{
 		this.sellNum = sellNum;
 		this.unit =  unit;
 		this.discount = discount;
-		this.sell = sell;
+		this.sellDetails = sellDetails;
 		
 	}
 	public Integer getId() {
@@ -132,10 +136,11 @@ public class Goods implements java.io.Serializable{
 	public void setDiscount(Float discount) {
 		this.discount = discount;
 	}
-	public Sell getSell() {
-		return sell;
+	public Set getSellDetails() {
+		return sellDetails;
 	}
-	public void setSell(Sell sell) {
-		this.sell = sell;
+	public void setSellDetails(Set sellDetails) {
+		this.sellDetails = sellDetails;
 	}
+	
 }

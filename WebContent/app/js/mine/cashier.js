@@ -1,4 +1,4 @@
-define(["jquery"],function(){
+define([],function(){
 
 	var goods = [];
 
@@ -177,7 +177,9 @@ define(["jquery"],function(){
 		function changeGoods()
 		{
 			 $.each($('.food'),function(index,sport){
-			 goods[index]={number:$(this).next().text(),sellNum:$(this).children('img').next().text()};
+			 goods[index]={number:$(this).next().text(),
+			 	sellNum:$(this).children('img').next().text(),
+			 	name:$(this).children('div').children('h4').text()};
 			});
 		}
 		

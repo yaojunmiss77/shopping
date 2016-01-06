@@ -20,8 +20,16 @@
     <result name="success">app/view/sellManager/warehouse.jsp</result>  
     </action>
     
-     <action name="AccountAction" class="controllerAction.AccountAction">    
+    <action name="AccountAction" class="controllerAction.AccountAction">    
     <result name="success">app/view/sellManager/account.jsp</result>  
+    </action>
+    
+    <action name="UserAction" class="controllerAction.UserAction">    
+    <result name="success">app/view/user/userList.jsp</result>  
+    </action>
+    
+    <action name="DetailAction" class="controllerAction.DetailAction">    
+    <result name="success">app/view/user/userList.jsp</result>  
     </action>
     
     

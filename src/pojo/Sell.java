@@ -5,7 +5,6 @@
  */
 package pojo;
 
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,17 +23,17 @@ public class Sell implements java.io.Serializable{
 	private Integer id;
 	private String number;
 	private java.util.Date sellDate;
-	private Set sellGoods = new HashSet(0);
 	private User user;
+	private Set sellDetails = new HashSet(0);
 	public Sell() {
 		super();
 	}
-	public Sell(String number, java.util.Date sellDate, Set sellGoods, User user) {
+	public Sell(String number, java.util.Date sellDate, User user,Set sellDetails) {
 		super();
 		this.number = number;
 		this.sellDate = sellDate;
-		this.sellGoods = sellGoods;
 		this.user = user;
+		this.sellDetails = sellDetails;
 	}
 
 	public Integer getId() {
@@ -55,19 +54,17 @@ public class Sell implements java.io.Serializable{
 	public void setSellDate(java.util.Date sellDate) {
 		this.sellDate = sellDate;
 	}
-	public Set getSellGoods() {
-		return sellGoods;
-	}
-	public void setSellGoods(Set sellGoods) {
-		this.sellGoods = sellGoods;
-	}
 	public User getUser() {
 		return user;
 	}
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
-	
+	public Set getSellDetails() {
+		return sellDetails;
+	}
+	public void setSellDetails(Set sellDetails) {
+		this.sellDetails = sellDetails;
+	}
 
 }

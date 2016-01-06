@@ -44,8 +44,11 @@
         <property name="discount" type="float">
             <column name="discount" length="64"/>
         </property>
-        <many-to-one name="sell" class="pojo.Sell" fetch="select">
-            <column name="sId" precision="22" scale="0" />
-        </many-to-one>
+        <set name="sellDetails" inverse="true">
+            <key>
+                <column name="gId" precision="22" scale="0" />
+            </key>
+            <one-to-many class="pojo.SellDetail" />
+        </set>
     </class>
 </hibernate-mapping>

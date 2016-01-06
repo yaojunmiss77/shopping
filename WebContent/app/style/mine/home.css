@@ -66,3 +66,11 @@ aside section ul li a span{
 
 	font-size: 0.1em;
 }
+
+/* 该功能使得侧边栏消失 */
+/*  #showLeftMember{
+	display: none;
+}
+.content-wrapper,.main-footer{
+	margin-left: 0px;
+}   */

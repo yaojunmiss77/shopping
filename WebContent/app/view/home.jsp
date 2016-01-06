@@ -29,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href="app/style/mine/home.css" rel="stylesheet" type="text/css" />
   </head>
   <!-- ADD THE CLASS layout-boxed TO GET A BOXED LAYOUT -->
-  <body  class=" sidebar-mini skin-blue-light" >
+  <body  class=" sidebar-mini skin-blue-light">
     <!-- Site wrapper -->
     <div class="wrapper">
   <!--头部开始-->
@@ -78,7 +78,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <li><a class="frame-menu" href="CashierAction.action">
             <img src="app/img/sell.png"/> <span>收银管理</span></a></li>
 
-            <li><a class="frame-menu" href="app/view/sellManager/sell.jsp">
+            <li><a class="frame-menu" href="UserAction.action">
            <img src="app/img/people.png"/><span>人事管理</span></a></li>
 
           <li><a class="frame-menu" class="frame-menu" href="AccountAction.action">
@@ -120,7 +120,7 @@ function  gaoliang(){
          <div class="content-wrapper">
           <!-- 主体开始 -->
   
-        <iframe id="if" src="CashierAction.action" style="width:100%; height:100%; "></iframe>
+        <iframe id="if" src="CashierAction.action" style="width:100%; height:100%;"></iframe>
 
     <!-- 主体结束 -->
          </div>
@@ -134,6 +134,8 @@ function  gaoliang(){
         <strong>浙江工业大学 | 俊俊食品有限公司 &copy; 2015-2018.</strong> 所有版权保留.
     </footer>
     <!--尾部结束-->
+    <script  src="app/js/bootstrap/jQuery-2.1.4.min.js"></script>
+<script  src="app/js/bootstrap/bootstrap.min.js"></script>
 
     <!--下面是requirejs框架-->
 <script data-main="app/js/mine/main.js" src="app/js/requirejs/require.js"></script>

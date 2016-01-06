@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <h2 style="margin-left: 3%;">折扣：<h3>0.85</h3>
   <h2 style="margin-left: 8%;">找零：<h3 id="remainder">￥0</h3>
 </div>
-<div id="shop-list" style="overflow-y:auto; overflow-x:hidden; height:86%;">
+<div id="shop-list">
        
 
 <s:iterator value="map" status="minMap"> 
@@ -46,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <h1><s:property value="lists[#minMap.count-1].name"/> <small><s:property value="lists[#minMap.count-1].content"/></small></h1>
 </div>
 
-   <div class="row" style="border-bottom: 1px solid #ddd;">
+   <div class="row">
    <s:iterator value="value">
   <div class="col-sm-4 col-md-2" >
     <div class="food" name="food">
@@ -66,6 +66,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </s:iterator>
 
 </div>
+<script  src="app/js/bootstrap/jQuery-2.1.4.min.js"></script>
+<script  src="app/js/bootstrap/bootstrap.min.js"></script>
            
 
 <!--下面是requirejs框架-->
