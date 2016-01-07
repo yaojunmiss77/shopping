@@ -98,6 +98,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 </div>
 </body>
+
  
 <!--下面是requirejs框架-->
     <script data-main="app/js/mine/main.js" src="app/js/requirejs/require.js"></script>
