@@ -4,6 +4,7 @@ import hibernate.util.HibernateUtil;
 
 import java.beans.IntrospectionException;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
 
@@ -124,6 +125,40 @@ public class ObjectDao implements IObjectDao
 		String hql = "from " +className+" order by id";
 		List list = HibernateUtil.executeQueryByPage(hql, null, pageSize, pageNow);
 		return list;
+	}
+	@Override
+	public boolean updateObjectByNumber(Object object) {
+		// TODO Auto-generated method stub
+		StringBuilder hql = new StringBuilder();
+		
+		hql.append("update "+ObjectToClass.getClass(object)+" set");
+		Class tClass = object.getClass();
+		List getValues =null;
+		Field[] fields = tClass.getDeclaredFields();
+		try {
+			getValues = ObjectToClass.testGetOrSet(object);
+		} catch (IllegalArgumentException | IllegalAccessException | InvocationTargetException
+				| IntrospectionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		for(int i=1;i<getValues.size();i++)
+		{
+			if(getValues.get(i) !=null && !getValues.get(i).toString().equals("[]"))
+			hql.append(" "+fields[i].getName()+"="+getValues.get(i)+",");
+		}
+		
+		String hql1 = hql.toString();
+		
+		StringBuilder hql2 = new StringBuilder(hql1.replaceAll(",$", ""));
+		hql2.append(" where age=?");
+		System.out.println(hql2.toString());
+		String[] parameters = {getValues.get(6).toString()};
+		
+		HibernateUtil.executeUpdate(hql2.toString(), parameters);
+		
+		
+		return false;
 	}
 	
 }

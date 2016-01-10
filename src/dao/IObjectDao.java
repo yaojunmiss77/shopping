@@ -40,5 +40,12 @@ public interface IObjectDao
 	 * @return List
 	 */
 	public List getPageObjectsByClassNameOrderById(String calssName,Integer pageNow,Integer pageSize);
+	
+	/**
+	 * @category 通过编号来更新一个对象
+	 * @param number
+	 * @return boolean
+	 */
+	public boolean updateObjectByNumber(Object object);
 
 }

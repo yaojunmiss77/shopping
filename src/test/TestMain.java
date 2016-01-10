@@ -1,13 +1,17 @@
 package test;
 
 import java.beans.IntrospectionException;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.List;
 
 import dao.ObjectDao;
+import dao.ObjectToClass;
 import hibernate.util.HibernateUtil;
 import pojo.Goods;
 import pojo.User;
+import serviceFactory.Service;
 
 public class TestMain {
 	
@@ -92,10 +96,10 @@ public class TestMain {
 	good.setNumber("fdsafdsa");
 	good.setImagePath("fdsafdas");*/
 	
-	user.setNumber("yaojun");
+	/*user.setNumber("yaojun");
 	user.setPassword("123");
 	
-	/*userDao.insertObject(user);*/
+	userDao.insertObject(user);
 		Goods good = new Goods();
 	good.setImagePath("app/img/foods/banana.png");
 	good.setName("香蕉");
@@ -106,7 +110,7 @@ public class TestMain {
 	good.setType("水果");
 	good.setSellNum(0);
 	good.setReserveNum(34);;
-	userDao.insertObject(good);
+	userDao.insertObject(good);*/
 	/*String hql = "select distinct type from Goods";
 	 * 
 	 * 
@@ -141,6 +145,34 @@ public class TestMain {
 	}*/
 	/*String[] parameters ={"21",String.valueOf("1132")};
 	HibernateUtil.executeUpdate("update Goods set reserveNum = 456456,sellNum=45 where number='08'", null);*/
+	User user1 = new User();
+	user1.setAge(321);
+/*	user1.setImagePath("3213");
+	user1.setName("321321");
+	user1.setNumber("098098");*/
+	/*Class tClass = user1.getClass();
+    List getValues=new ArrayList();
+    //获得该类的所有属性
+    Field[] fields = tClass.getDeclaredFields();
+    
+    for(Field field : fields)
+    {
+    	System.out.println("属性名称为:"+field.getName());
+    }*/
+	
+	Service.getObjectDao().updateObjectByNumber(user1);
+	
+	/*List lsits = ObjectToClass.testGetOrSet(user1);
+	for(Object user2 : lsits)
+	{
+		if(user2!=null)
+		System.out.println(user2);
+	}*/
+	
+	
+	
+    
+    
 	
  }
 	

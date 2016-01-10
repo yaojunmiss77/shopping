@@ -29,8 +29,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- bootstrap wysihtml5 - text editor -->
     <link href="app/style/bootstrap/css/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
 <link href="app/style/mine/warehouse.css" rel="stylesheet" type="text/css" />
-
-
   </head>
 <body>
     <div class="box">
@@ -72,9 +70,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <td><s:property value="discount"/></td>
                     <td>
                     <!-- Button trigger modal -->
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+<button type="button" name="editor" class="btn btn-success" data-toggle="modal" data-target="#myModal">
   编辑
 </button>
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -82,67 +82,75 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">商品编辑</h4>
+        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-plus-square "style="margin-right:5px"></i>编辑商品</h4>
       </div>
-      <div class="modal-body" style="height:68%; overflow:auto;">
-        <div class="box-body table-responsive no-padding">
-             <table class="table table-hover table-striped">
-                <tbody><tr>
-                    <th>编号</th>
-                    <th>名称</th>
-                    <th>类型</th>
-                </tr>
-                <tr>
-                    <td>183</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                </tr>
-                <tr>
-                    <td>219</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                </tr>
-                <tr>
-                    <td>657</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                </tr>
-                <tr>
-                    <td>657</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                </tr>
-                <tr>
-                    <td>657</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                </tr>
-                <tr>
-                    <td>657</td>
-                    <td>赤诚</td>
-                    <td>11-7-2014</td>
-                </tr>
-                </tbody></table>
-                
-                <nav>
-  <ul class="pagination pagination-sm no-margin pull-right" style="padding-right: 8%; padding-top:2%; padding-bottom: 2%">
-    <li>
-      <a href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li>
-      <a href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+      <div class="modal-body" style="height:68%; overflow-y:auto; overflow-x: hidden;">
+        <div class="box-body table-responsive no-padding" style="overflow-x: hidden;">
+             <section class="content" id="chart" style="padding-top:0px;padding-bottom:0px; margin-bottom:0px;"  >
+            <div class="row">
+                <div class="col-md-12" style="padding-left:2px; padding-right: 2px; padding-top: 2px; padding-bottom: 0px; ">
+                    <div id="chartContent1" class="box box-primary" style="padding-bottom:0px; border: 0px;">
+                     <form class="form-horizontal">
+                      <div class="box-body editorInputs">
+                        <div class="form-group goodsName">
+                          <label  class="col-sm-3 control-label">商品名称</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" ng-model="defaultMember.name"  placeholder="商品名称">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-3 control-label">商品类型</label>
+                          <div class="col-sm-9">
+                          <select name="type">
+                              <option value ="volvo">水果</option>
+                              <option value ="saab">生活用品</option>
+                              <option value="opel">熟食</option>
+                              <option value="audi">饮料</option>
+                          </select>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label">库存数量</label>
+                          <div class="col-sm-9">
+                            <input type="number" class="form-control" ng-model="defaultMember.number"  placeholder="库存数量">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label">销量</label>
+                          <div class="col-sm-9">
+                            <input type="number" class="form-control" ng-model="defaultMember.number"  placeholder="销量">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label">供货商</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control"  ng-model="defaultMember.origin"  placeholder="供货商" value="test">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label">商品进价</label>
+                          <div class="col-sm-9">
+                            <input type="number" class="form-control" ng-model="defaultMember.number"  placeholder="进价">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label">商品售价</label>
+                          <div class="col-sm-9">
+                            <input type="number" class="form-control" ng-model="defaultMember.number"  placeholder="售价">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label">商品折扣</label>
+                          <div class="col-sm-9">
+                            <input type="number" class="form-control" ng-model="defaultMember.number"  placeholder="折扣">
+                          </div>
+                        </div>
+                  </div>
+                </form>
+                    </div>
+                </div>
+            </div>
+        </section>
                 
         </div><!-- /.box-body -->
       </div>
@@ -157,8 +165,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </td>
                 </tr>
                 </s:iterator>
-                </tbody></table>
-                
+                </tbody></table>   
                 <nav>
   <ul class="pagination pagination-sm no-margin pull-right" style="padding-right: 8%; padding-top:2%; padding-bottom: 2%">
     <li>
@@ -177,10 +184,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </a>
     </li>
   </ul>
-</nav>
-                
-        </div><!-- /.box-body -->
-        
+</nav>         
+        </div><!-- /.box-body --> 
     </div>
 
 </div>
@@ -190,7 +195,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script  src="app/js/bootstrap/bootstrap.min.js"></script>
  
 <!--下面是requirejs框架-->
-    <script data-main="app/js/mine/main.js" src="app/js/requirejs/require.js"></script>
+   <script data-main="app/js/mine/main.js" src="app/js/requirejs/require.js"></script>
    </script>
     
     

@@ -7,4 +7,14 @@ table tbody tr td{
 table tbody tr td{
   vertical-align: center;
 }
+/* button {
+    padding: 15px;
+    background-image: linear-gradient(#FC6E51, #FFF);
+    background-size: auto 200%;
+    background-position: 0 100%;
+    transition: background-position 0.5s;
+}    
+button:hover {
+    background-position: 0 0;
+} */
 
